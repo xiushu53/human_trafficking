@@ -156,9 +156,9 @@ function display_groupData(val) {
         d3.selectAll(".tick").select("text").attr("font-size", "16px");
 
         var group_comments = [
-            "Asia-Pcificグループは、最大のネットワークだ。特に、被害者の69%が外国人であり、国境を越えた人身売買が行われているグループである。また被害者の約80%は女性である",
-            "Europeグループは、被害者の73%が自国民であり、各国は国境を越えた人身売買よりも自国内を主に人身売買している。65%が女性である",
-            "Senegalグループは、senegalを搾取地としたネットワークで、周辺国か数は少ないものの、被害者の81%は外国人である。そして96%が子どもであり、95%が男性である"
+            "The Asia-Pcific group is the largest network. In particular, 69% of the victims are foreigners and victims across the border are being trafficked. Also, 80% of the victims are female.",
+            "In the Europe group, 73% of the victims are citizens of their country, and each country is mainly trafficking in its own country rather than cross-border trafficking. And 65% of the victims are female.",
+            "The Senegal Group is a network with senegal as an exploitation site from neighboring countries. The victims number is few, however 81% of the victims are foreigners. And 96% are children and 95% are men."
         ];
 
 
@@ -363,9 +363,9 @@ function display_positionData(val) {
 
 
             var position_comments = [
-                "Asia-Pcificグループは、最大のRelay HubのIndonesiaのほか、Phillipine,Thai,Cambodiaの東南アジア４カ国がネットワークの中心だ。最大の行き先地のUnited Statesのほか、中東、アジアなどに展開されている",
-                "Europeグループは、供給元と市場国とはっきり別れた構成になっている。ウクライナ、ルーマニア、ベラルーシ、モルドバなど東欧諸国が主な供給元国である。",
-                "Senegalグループは、senegalを搾取としてアフリカ西海岸地域諸国で構成されている。"
+                "In the Asia-Pcific group,  four southeast asian countries are centerd on the group. They are Indonesia as the largest Relay Hub, Phillipine, Thai, Cambodia. Besides  United States is largest destination, and it is deployed in the Middle East, Asia, etc.",
+                "The Europe group has a composition that is clearly separated the supplier and the exploiter countries. Eastern european countries such as Ukraine, Romania, Belarus, Moldova are the major supplier countries.",
+                "The Senegal group consists of African West Coast region countries."
             ];
 
 
