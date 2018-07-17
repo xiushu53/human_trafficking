@@ -372,6 +372,11 @@ function display_positionData(val) {
             var comment = d3.select(".position_comment")
                 .append("p")
                 .text(position_comments[+val - 1]);
+
+            if (document.getElementById("byposi").selected === true) {
+                window.location.href = "#comp";
+            };
+
         });
     }
 };
@@ -548,6 +553,8 @@ function hdi_val(val) {
             .text("Max " + d3.max(both_data) + " ▲")
             .style("fill", "#555")
             .style("text-anchor", "end");
+
+        window.location.href = "#hdi";
 
 
         function group_color(position) {
