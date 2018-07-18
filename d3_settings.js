@@ -632,6 +632,8 @@ function position_val(pos_val) {
             pos_node[i].style.fill = "#777777";
         }
 
+        addLegend(pos_val);
+
     } else if (pos_val == "by_position") {
         var pos_node = document.getElementsByClassName("Supplier");
         for (var i = 0; i < pos_node.length; i++) {
@@ -649,6 +651,9 @@ function position_val(pos_val) {
         for (var i = 0; i < pos_node.length; i++) {
             pos_node[i].style.fill = "#D9D9D9";
         }
+
+        addLegend(pos_val);
+
         document.getElementsByName("pos_color")[0][1].selected = true;
 
     }
@@ -719,6 +724,59 @@ function continent_color(val, data) {
         }
     }
 };
+
+function addLegend(val) {
+
+    d3.select(".legend_continent").remove();
+
+    if (val == "continent") {
+
+        var ordinal = d3.scaleOrdinal()
+            .domain(["Asia", "Europe", "Africa", "North America", "South America", "No place"])
+            .range(["#FDB462", "#BC80BD", "#8DD3C7", "#FB8072", "#FCCDE5", "#777777"]);
+
+        console.log(ordinal);
+
+        var legend = svg.append("g")
+            .attr("class", "legend_continent")
+            .attr("transform", "translate(20,20)");
+
+        var legendOrdinal = d3.legendColor()
+            .shapeWidth(30)
+            .cells(6)
+            .orient('vertical')
+            .scale(ordinal);
+
+        d3.select('.legend_continent')
+            .call(legendOrdinal);
+
+    } else if (val == "by_position") {
+
+        console.log(val);
+
+        var ordinal = d3.scaleOrdinal()
+            .domain(["Supplier", "Exploiter", "Relay Hub", "Domestic"])
+            .range(["#FB8072", "#80B1D3", "#BC80BD", "#D9D9D9"]);
+
+        console.log(ordinal);
+
+        var legend = svg.append("g")
+            .attr("class", "legend_continent")
+            .attr("transform", "translate(20,20)");
+
+        var legendOrdinal = d3.legendColor()
+            .shapeWidth(30)
+            .cells(4)
+            .orient('vertical')
+            .scale(ordinal);
+
+        d3.select('.legend_continent')
+            .call(legendOrdinal);
+
+    }
+
+};
+
 
 var simulation = d3.forceSimulation()
     .force("link", d3.forceLink().id(function(d) {
@@ -831,6 +889,10 @@ function draw_graph(val) {
                 });
         }
 
+        addLegend("continent");
+
+
+
 
         function dragstarted(d) {
             if (!d3.event.active) simulation.alphaTarget(0.3).restart();
@@ -848,6 +910,7 @@ function draw_graph(val) {
             d.fx = null;
             d.fy = null;
         }
+
     });
 };
 
